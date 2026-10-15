@@ -12,7 +12,10 @@ def index():
 @app.route('/', methods=['POST'])
 def process_form():
     button_python = request.form.get('button_python')
-    return render_template('index.html', button_python=button_python)
+    button_db= request.form.get('button_db')
+    
+    return render_template('index.html',
+    button_python=button_python,button_bd=button_db)
 
 if __name__ == "__main__":
     app.run(debug=True)
